@@ -10,6 +10,9 @@ public class TravelManager : MonoBehaviour {
 	public GameObject VillageUI;
 	public GameObject light;
 
+	public float travelDistance;
+	public float travelDistancePrDay = 80f;
+
 
 	private static TravelManager _instance;
 	public static TravelManager instance

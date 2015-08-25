@@ -29,6 +29,9 @@ public class Person : MonoBehaviour {
 	public int safety {get{return this.safety;} set{if(value>EntityManager.instance.ValueMin && value<EntityManager.instance.ValueMax){this.safety = value;}}}
 
 
+	public bool hasClothing;
+	public bool hasTent;
+
 	
 	// Use this for initialization
 	void Start () {

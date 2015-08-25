@@ -24,6 +24,9 @@ public class TimeKeeper : MonoBehaviour {
 
 	public Text timeText;
 
+	bool morningTick = false;
+	bool dinnerTick = false;
+
 	private static TimeKeeper _instance;
 	public static TimeKeeper instance
 	{
@@ -66,8 +69,16 @@ public class TimeKeeper : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (time < 25) {
+		if (time < 25f) {
 			time += Time.deltaTime * timeFlowSpeed;
+			if(time > 20f && !dinnerTick){
+				FamilyResources.instance.DinnerTick();
+				dinnerTick = true;
+			}
+			if(time > 8f && !morningTick){
+				FamilyResources.instance.MorningTick();
+				morningTick = true;
+			}
 		} else {
 			time = 0f;
 			AdvanceDay();
@@ -86,6 +97,9 @@ public class TimeKeeper : MonoBehaviour {
 		} else {
 			curDay++;
 		}
+		morningTick = false;
+		dinnerTick = false;
+		FamilyResources.instance.DayTick ();
 	}
 
 	void AdvanceWeek(){

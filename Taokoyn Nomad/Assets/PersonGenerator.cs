@@ -11,6 +11,9 @@ public class PersonGenerator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		CreatePerson ("Me");
+		CreatePerson ("Kim");
 	
 	}
 	
@@ -119,8 +122,12 @@ public class PersonGenerator : MonoBehaviour {
 
 
 		EntityManager.instance.people.Add (name,p);
+		FamilyResources.instance.UpdateAmountOfPeople ();
 
-
+		if (FamilyResources.instance.usedClothing < FamilyResources.instance.clothing) {
+			ClothingContainer.instance.clothings.Add(new Clothing(p));
+			p.hasClothing = true;
+		}
 
 
 	}

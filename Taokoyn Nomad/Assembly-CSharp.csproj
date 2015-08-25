@@ -46,11 +46,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Animals.cs" />
+     <Compile Include="Assets\ClothingContainer.cs" />
      <Compile Include="Assets\CustomTypes.cs" />
      <Compile Include="Assets\EntityManager.cs" />
+     <Compile Include="Assets\FamilyResources.cs" />
      <Compile Include="Assets\Person.cs" />
      <Compile Include="Assets\PersonGenerator.cs" />
-     <Compile Include="Assets\Resource.cs" />
      <Compile Include="Assets\TimeKeeper.cs" />
      <Compile Include="Assets\TravelManager.cs" />
  <Reference Include="UnityEngine.UI">
